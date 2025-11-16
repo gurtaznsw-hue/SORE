@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  
+  body {
+    background: linear-gradient(to bottom, #cfe9ff, #ffffff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .login-box {
+    background: linear-gradient(to bottom, #b3f1e1, #ffffff);
+    width: 380px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .logo-box {
+    position: absolute;
+    top: 150px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo-box img {
+    width: 160px;
+   
+  }
+
+  .login-box h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .login-box p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+
+  .login-box input[type="email"],
+  .login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  .login-box input:focus {
+    border-color: #5c9eff;
+    outline: none;
+  }
+
+ 
+  .login-box button {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .login-box button:hover {
+    background: #333;
+  }
+
+ 
+  .forgot {
+    text-align: right;
+    display: block;
+    font-size: 12px;
+    color: #0073ff;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-decoration: none;
+  }
+
+ 
+  .or {
+    margin: 15px 0;
+    font-size: 13px;
+    color: #777;
+  }
+
+  .social-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .social-buttons button {
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    color: #333;
+    width: 80px;
+  }
+
+  .social-buttons button:hover {
+    background: #e0e0e0;
+  }
+
+</style>
+</head>
+<body>
+  <div class="logo-box">
+    <img src="logo.jpg" alt="Logo">
+  </div>
+    
+    <div class="logo-box">
+    <img src="logo.jpg" alt="Logo">
+  </div>
+  <div class="login-box">
+    <h2>Sign in with Email or Phone Number:</h2>
+    <p>To Start Shopping with Sore </p>
+
+    <input type="email" placeholder="Email or Phone Number">
+    <input type="password" placeholder="Password">
+
+    <a href="#" class="forgot">Forgot password?</a>
+    <button>Get Started</button>
+
+    <div class="or">or sign in with</div>
+
+    <div class="social-buttons">
+      <button><img src="google.jpg" alt="Google" style="width:18px; margin-right:5px;"> Google</button>
+      <button><img src="facebook.jpg" alt="Facebook" style="width:18px; margin-right:5px;"> Facebook</button>
+      <button><img src="apple.jpg" alt="Apple" style="width:18px; margin-right:5px;"> Apple</button>
+    </div>
+  </div>
+
+</body>
+</html>

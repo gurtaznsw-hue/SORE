@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SORE — Simple Frontend (No JavaScript)</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #0b1220;
+    }
+
+   
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 16px;
+    }
+
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgb(227, 224, 240);
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: 0.3s ease;
+      
+    }
+
+  
+
+
+.navbar:hover {
+  background: rgb(230, 220, 220); 
+  transform: translateY(-3px);   
+  box-shadow: 0 10px 25px rgba(201, 33, 33, 0.15); 
+}
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo .mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      background: linear-gradient(135deg,#b98a3d,#f3d391);
+      color: #071428;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .brand-title {
+      margin: 0;
+      line-height: 1;
+    }
+    .brand-sub {
+      margin: 0;
+      font-size: 12px;
+      color: #5b6470;
+    }
+
+    
+    .search-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      background: #fbfdff;
+      border-radius: 8px;
+      border: 1px solid rgba(11,59,90,0.04);
+    }
+    .search-area input[type="text"] {
+      border: 0;
+      outline: none;
+      font-size: 15px;
+      width: 100%;
+      background: transparent;
+    }
+
+  
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    select {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(11,59,90,0.06);
+      background: white;
+    }
+    .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #eef2f5;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #0b1220;
+    }
+
+   
+    .hero {
+      margin-top: 18px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      background: linear-gradient(90deg,#ffffff,#fbfdff);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    .hero .left {
+      flex: 1;
+    }
+    .hero h2 { margin: 0 0 6px 0; font-size: 24px; }
+    .hero p { margin: 0; color: #55606a; }
+    .hero .cta {
+      margin-top: 12px;
+      display: inline-block;
+      padding: 10px 14px;
+      background: linear-gradient(90deg,#0b3b5a,#2f5d78);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero .image {
+      width: 220px;
+      height: 140px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #eceef1;
+    
+    }
+    .hero img { width: 20%; height: 15%; object-fit: cover; display: block; left: 900px; top: 130px  ;position: absolute;}
+
+ 
+    .categories {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .category {
+      background: white;
+      padding: 10px 12px;
+      border-radius: 8px;
+      display:flex;
+      gap: 10px;
+      align-items: center;
+      box-shadow: 0 6px 18px rgba(223, 56, 56, 0.04);
+    }
+
+
+    .category img { width: 44px; height: 44px; border-radius: 6px; object-fit: cover; }
+
+    .category:hover{
+      background-color: lightskyblue;
+    }
+
+ 
+    .product-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .product .media {
+      height: 180px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f2f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product .media img { width: 100%; height: 100%; object-fit: cover; }
+
+    .product .title {
+      font-weight: bold;
+      margin: 0;
+      font-size: 16px;
+    }
+    .product .desc {
+      margin: 0;
+      color: #55606a;
+      font-size: 13px;
+    }
+
+    .product .price {
+      font-weight: 700;
+      color: #3d43b9;
+      margin-top: 6px;
+      font-size: 16px;
+    }
+
+    .product .actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto; 
+    }
+    .btn {
+      flex: 1;
+      padding: 9px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s ease;
+    }
+    .btn.primary {
+      background: linear-gradient(90deg,#2377af,#2f5d78);
+      color: white;
+    }
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(11,59,90,0.08);
+      color: #0b1220;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    .btn.primary:hover {
+      background: linear-gradient(90deg,#0d4a73,#366a87);
+    }
+
+    .btn.secondary:hover {
+      background: rgba(11,59,90,0.05);
+      border-color: rgba(11,59,90,0.2);
+    }
+
+    .footer {
+      margin-top: 20px;
+      padding: 12px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .desc:hover{
+      color: red;
+      cursor: pointer;
+    }
+
+    .price:hover{
+       background: rgb(230, 220, 220); 
+       transform: translateY(-3px);   
+       box-shadow: 0 10px 25px rgba(0, 0, 0, 0); 
+    }
+
+
+    footer {
+      background: #f6f5f5;
+      color: rgb(20, 0, 0);
+      padding: 30px 0 15px;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    footer h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-4px);
+      opacity: 0.9;
+    }
+
+    .instagram { background: #E1306C; }
+    .facebook { background: #1877F2; }
+    .youtube { background: #f7f5f5; }
+    .linkedin { background: #0A66C2; }
+
+    footer p {
+      font-size: 14px;
+      color: #bbb;
+      margin-top: 10px;
+
+    }
+
+    .social-icons img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+
+    
+
+   
+    @media (max-width: 760px) {
+      .hero { flex-direction: column; align-items: flex-start; }
+      .search-area { display: block; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="navbar" role="banner">
+      <div class="logo" aria-hidden="true">
+        <div class="mark">SORE</div>
+        <div>
+          <p class="brand-title">SORE</p>
+          <p class="brand-sub">From Wishlist to Doorstep</p>
+        </div>
+      </div>
+
+   
+      <div class="search-area">
+        <input type="text" placeholder="Search products, brands, categories..." aria-label="Search">
+      </div>
+
+   
+      <div class="controls" aria-hidden="false">
+        <label for="country-select" style="font-size:13px;color:#55606a">Country</label>
+        <select id="country-select" name="country">
+          <option value="">Select country</option>
+          <option value="In">India</option>
+          <option value="Us">United States</option>
+          <option value="Ru">Russia</option>
+          <option value="UK">United Kingdom</option>
+        </select>
+
+        <div class="icon" title="Cart">🛒</div>
+        <div class="icon" title="Wishlist">♡</div>
+        <div class="icon" title="Account">👤</div>
+
+      </div>
+    </header>
+
+  
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="left">
+        <h2 id="hero-title">SORE — Curated premium picks</h2>
+        <p>Handpicked fashion, tech & home — premium quality, delivered fast.</p>
+     
+        <a href="#products" class="cta" style="display:inline-block;margin-top:10px;background:#0b3b5a;color:white;padding:10px 12px;border-radius:8px;text-decoration:none;">Shop New Arrivals</a>
+      </div>
+      <div class="offers" aria-hidden="true">
+        <img src="offer.jpg" width="3" height="2">
+      </div>
+    </section>
+
+
+    <div class="categories" aria-label="Categories">
+      <div class="category">
+        <img src="men.jpg" alt="Men category">
+        <div>Men</div>
+      </div>
+      <div class="category">
+        <img src="women.jpg" alt="Women category">
+        <div>Women</div>
+      </div>
+      <div class="category">
+        <img src="kids.jpg" alt="Kids category">
+        <div>Kids</div>
+      </div>
+      <div class="category">
+        <img src="rarz.jpg" alt="Home category">
+        <div>Rarz</div>
+      </div>
+    </div>
+
+    
+    <main id="products" class="product-grid" aria-live="polite">
+      
+      <article class="product">
+        <div class="media">
+          <img src="https://dawntown.co.in/cdn/shop/files/DiorxAirJordan1High.webp?v=1722506024&width=500" alt="Leather Sneakers">
+        </div>
+        <p class="title">Nike Air Jordan Dior</p>
+        <p class="desc">The most premium shoe for the finest of the class</p>
+        <p class="price">₹ 6,50,000</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Add to cart</a>
+          <a class="btn secondary" href="#">Wishlist</a>
+          <a class="btn secondary" href="#">Auction</a>
+        </div>
+      </article>
+
+
+      <article class="product">
+        <div class="media">
+          <img src="download-1.jpg" alt="Gaming Laptop">
+        </div>
+        <p class="title">Richard Mile</p>
+        <p class="desc">Racing Machine on your wrist</p>
+        <p class="price">₹ 5,00,00,000</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Add to cart</a>
+          <a class="btn secondary" href="#">Wishlist</a>
+          <a class="btn secondary" href="#">Auction</a>
+
+        </div>
+      </article>
+
+      
+      <article class="product">
+        <div class="media">
+          <img src="https://img.thecdn.in/367557/cq5damweb10001000-1713889883398.png?width=600&format=webp" alt="Rare Watch">
+        </div>
+        <p class="title">Wireless Headphones</p>
+        <p class="desc">The most comfortable Headphones in the world</p>
+        <p class="price">₹ 32,000</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Add to cart</a>
+          <a class="btn secondary" href="#">Wishlist</a>
+        </div>
+      </article>
+
+    
+      <article class="product">
+        <div class="media">
+          <img src="iphone.jpg">
+           
+        </div>
+        <p class="title">Iphone 17</p>
+        <p class="desc">The Latest Piece of Technology in your hands</p>
+        <p class="price">₹ 1,35,000</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Add to cart</a>
+          <a class="btn secondary" href="#">Wishlist</a>
+           <a class="btn secondary" href="#">Auction</a>
+        </div>
+      </article>
+
+    
+      <article class="product">
+        <div class="media">
+          <img src="images.jpg" alt="Gucci">
+        </div>
+        <p class="title">Gucci Jacket</p>
+        <p class="desc">Premium in every inch of the Jacket</p>
+        <p class="price">₹ 2,00,000</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Add to cart</a>
+          <a class="btn secondary" href="#">Wishlist</a>
+          <a class="btn secondary" href="#">Auction</a>
+
+        </div>
+      </article>
+
+
+      <article class="product">
+        <div class="media">
+          <img src="download.jpg" alt="Kids Playset">
+        </div>
+        <p class="title">Washing Machine</p>
+        <p class="desc">Experience powerful, efficient, and quiet cleaning with advanced technology.</p>
+        <p class="price">₹ 35,999</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Add to cart</a>
+          <a class="btn secondary" href="#">Wishlist</a>
+        </div>
+      </article>
+
+      
+      <article class="product">
+        <div class="media">
+          <img src="images-4.jpg" alt="Badminton Raquet">
+        </div>
+        <p class="title">Yonex Musclepower</p>
+        <p class="desc">Light weight and ultra balanced raquet for elite level playe</p>
+        <p class="price">₹ 7,999</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Add to cart</a>
+          <a class="btn secondary" href="#">Wishlist</a>
+        </div>
+      </article>
+
+
+       <article class="product">
+        <div class="media">
+          <img src="images-3.jpg" alt="Gaming Laptop">
+        </div>
+        <p class="title">H.P Victus</p>
+        <p class="desc">5070 RTX TI GPU,Heaven for gamers</p>
+        <p class="price">₹ 1,29,999</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Add to cart</a>
+          <a class="btn secondary" href="#">Wishlist</a>
+        </div>
+      </article>
+
+ </main>
+
+
+    <div style="flex: 1;"></div>
+<footer>
+  <h2>Follow Us On</h2>
+<div class="social-icons">
+  <a href="https://instagram.com" target="_blank" class="instagram" aria-label="Instagram">
+    <img src="insta.jpg" alt="Instagram" width="24" height="24" >
+  </a>
+  <a href="https://facebook.com" target="_blank" class="facebook" aria-label="Facebook">
+    <img src="facebook.jpg" alt="Facebook" width="24" height="24" >
+  </a>
+  <a href="https://youtube.com" target="_blank" class="youtube" aria-label="YouTube">
+    <img src="yt.jpg" alt="YouTube" width="24" height="24">
+  </a>
+  <a href="https://linkedin.com" target="_blank" class="linkedin" aria-label="LinkedIn">
+    <img src="linkedin.jpg" alt="LinkedIn" width="24" height="24" >
+  </a>
+</div>
+  <p>© 2025 SORE. All rights reserved.</p>
+</footer>
+
+    <footer class="footer">
+      <div><strong>SORE</strong> · Curated luxury · Fast delivery · Trusted sellers · Best in quality</div>
+      <div>© 2025 SORE</div>
+    </footer>
+
+  </div>
+</body>
+</html>
+</body>
+</html>

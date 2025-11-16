@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SORE Product Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: white;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      width: 100%;
+      margin: auto;
+      background: white;
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .product-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .product-images img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+
+    .discount {
+      color: #ff4d4d;
+      margin-left: 10px;
+    }
+
+    .sizes button {
+      padding: 8px 15px;
+      margin: 5px;
+      border: 1px solid black;
+      background: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .add-to-cart {
+      background: #ff0066;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .wishlist {
+      background: white;
+      padding: 12px 25px;
+      border: 1px solid black;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .add-to-cart:hover{
+      transform: translateY(-5px);
+  transition: 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.wishlist:hover{
+  background-color: gold;
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.sizes:hover{
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="left">
+      <div class="product-images">
+        <img src="jordan.jpg" alt="shoe image 1">
+        <img src="air-jordan-4-crimson-ct8527-016-release-date.avif" alt="shoe image 2">
+      
+    </div>
+
+    <div class="right">
+      <h2>Nike Air Jordan 4</h2>
+      <p>⭐ 4.5 | 320 Ratings</p>
+
+      <div class="price">₹ 60,000
+        <span class="old-price">₹75,000</span>
+      </div>
+
+      <h3>Select Size</h3>
+      <div class="sizes">
+        <button>5</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>10</button>
+        <button>11</button>
+      </div>
+
+      <button class="add-to-cart">Add to Bag</button>
+      <button class="wishlist">Wishlist</button>
+    </div>
+
+  </div>
+
+  <div class="combos-section" style="padding:20px; background:#fff; margin-top:20px;">
+    <h2>Suggested Styling Combos</h2>
+    <div class="combos" style="display:flex; flex-wrap:wrap; gap:20px; margin-top:15px;">
+      <div style="flex:1; min-width:250px; border:1px solid #ddd; padding:15px; border-radius:8px; text-align:center;">
+        <img src="generated-image (1).png" style="width:100%; border-radius:5px;"/>
+        <p></p>
+      </div>
+      <div style="flex:1; min-width:250px; border:1px solid #ddd; padding:15px; border-radius:8px; text-align:center;">
+        <img src="Screenshot 2025-11-11 at 11.08.48 AM.png" style="width:100%; border-radius:5px;"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="below-sections" style="width:980px;max-width:100%;margin:40px auto;display:flex;gap:40px;align-items:flex-start;">
+
+    <div class="left-col" style="flex:1;">
+     
+      <section class="section-container">
+        <h2 style="margin-bottom:16px;">Other Similar Products</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <img src="images-2.jpg">
+            <p style="color:#0a4a9a;">Price:₹ 12,500</p>
+          </div>
+          <div clasd-chicago-the-inspiration-behind-the-design.avifs="related-card">
+            <img src="shoe2.jpg" width="250px">
+            <p style="margin-top:8px;">Nike Air Jordan 1 </p>
+            <p style="color:#0a4a9a;">Price:₹ 62,000</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="right-col" style="flex:1;">
+      <section class="section-container">
+        <h2>Product Details</h2>
+        <ul style="list-style:none;line-height:1.8;font-size:15px;">
+          <li>• Material: Premium Leather + Mesh</li>
+          <li>• Colorway: White / Grey / Yellow</li>
+          <li>• Release Year: 2023</li>
+          <li>• Condition: Brand New</li>
+          <li>• Ships with: Box + Authenticity Tag</li>
+        </ul>
+      </section>
+
+      <section class="section-container">
+        <h2>Seller Rating</h2>
+        <p>⭐ 4.8 / 5 — Based on 120 verified sales</p>
+        <p style="color:#0a4a9a;">• Verified Elite Seller</p>
+        <p style="color:#0a4a9a;">• Fast Shipping Record</p>
+      </section>
+
+    
+      <section class="section-container">
+        <h2>Authenticity Inspection</h2>
+        <ul style="list-style:none;line-height:1.8;font-size:15px;">
+          <li>✅ Verified by specialists</li>
+          <li>✅ Checks for stitching, material, logos</li>
+          <li>✅ UV check for hidden brand markings</li>
+          <li>✅ Tamper-proof authentication tag included</li>
+        </ul>
+      </section>
+    </div>
+
+  </div>
+
+</body>
+</html>

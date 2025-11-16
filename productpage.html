@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SORE Product Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      width: 100%;
+      margin: auto;
+      background: white;
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .product-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .product-images img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+
+    .discount {
+      color: #ff4d4d;
+      margin-left: 10px;
+    }
+
+    .sizes button {
+      padding: 8px 15px;
+      margin: 5px;
+      border: 1px solid black;
+      background: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .add-to-cart {
+      background: #ff0066;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .wishlist {
+      background: white;
+      padding: 12px 25px;
+      border: 1px solid black;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="left">
+      <div class="product-images">
+        <img src="https://via.placeholder.com/300x300" alt="shoe image 1">
+        <img src="https://via.placeholder.com/300x300" alt="shoe image 2">
+        <img src="https://via.placeholder.com/300x300" alt="shoe image 3">
+        <img src="https://via.placeholder.com/300x300" alt="shoe image 4">
+      </div>
+    </div>
+
+    <div class="right">
+      <h2>SORE Men Lace-Up Sneakers</h2>
+      <p>⭐ 4.5 | 320 Ratings</p>
+
+      <div class="price">₹1305
+        <span class="old-price">₹2499</span>
+        <span class="discount">(48% OFF)</span>
+      </div>
+
+      <h3>Select Size</h3>
+      <div class="sizes">
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>10</button>
+      </div>
+
+      <button class="add-to-cart">Add to Bag</button>
+      <button class="wishlist">Wishlist</button>
+    </div>
+
+   
+
+  </div>
+
+  <div>
+    <p>Product Details:
+        
+    </p>
+  </div>
+
+  <div class="combos-section" style="padding:20px; background:#fff; margin-top:20px;">
+    <h2>Styling Combos</h2>
+    <div class="combos" style="display:flex; flex-wrap:wrap; gap:20px; margin-top:15px;">
+      <div style="flex:1; min-width:250px; border:1px solid #ddd; padding:15px; border-radius:8px; text-align:center;">
+        <img src="https://via.placeholder.com/200" style="width:100%; border-radius:5px;"/>
+        <p>Product 1 + Product 2</p>
+      </div>
+      <div style="flex:1; min-width:250px; border:1px solid #ddd; padding:15px; border-radius:8px; text-align:center;">
+        <img src="https://via.placeholder.com/200" style="width:100%; border-radius:5px;"/>
+        <p>Product 3 + Product 4</p>
+      </div>
+      <div style="flex:1; min-width:250px; border:1px solid #ddd; padding:15px; border-radius:8px; text-align:center;">
+        <img src="https://via.placeholder.com/200" style="width:100%; border-radius:5px;"/>
+        <p>Product 5 + Product 6</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

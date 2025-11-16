@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Bidding Panel</title>
+  <style>
+
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+
+    body {
+      background: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+    }
+
+    
+    .product-card {
+      width: 980px;
+      max-width: 100%;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(22,30,50,0.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 0;
+    }
+
+   
+    .image-area {
+      min-height: 380px;
+      background: linear-gradient(180deg,#4573bd,#1551a9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-area img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .bid-panel {
+      padding: 22px;
+      border-left: 1px solid #ea1667;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .current-bid {
+      background: linear-gradient(180deg,#ffffff,#fbfdff);
+      border: 1px solid #e6eef8;
+      padding: 18px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(18,34,79,0.03);
+    }
+    .current-bid .label { font-size: 13px; color: #888; }
+    .current-bid .amount {
+      font-size: 36px;
+      font-weight: 800;
+      color: #0a4a9a;
+      margin-top: 6px;
+    }
+
+   
+    .bid-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .bid-input {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .bid-input input[type="number"] {
+      flex: 1;
+      padding: 10px 12px;
+      border: 1px solid #d6e2f7;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .btn {
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background: #1b73d9;
+      color: white;
+      box-shadow: 0 4px 10px rgba(27,115,217,0.18);
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid #e0e6ef;
+      color: #333;
+    }
+
+    .watchlist {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 14px;
+      color: #444;
+    }
+
+  
+    .seller {
+      margin-top: auto; 
+      padding: 14px;
+      border-radius: 8px;
+      background: #d5c1d9;
+      border: 1px solid #cc2525;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .seller .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      background: linear-gradient(180deg,#cfe9f8,#f6f9fb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #4b85cc;
+      font-size: 18px;
+    }
+    .seller .info {
+      font-size: 14px;
+    }
+    .seller .info .name { font-weight: 700; color: #0c2646; }
+    .seller .info .status { font-size: 13px; color: #6d7a8c; }
+
+    @media (max-width: 720px) {
+      .product-card { grid-template-columns: 1fr; }
+      .bid-panel { order: 2; }
+      .image-area { order: 1; min-height: 240px; }
+    }
+
+  .section-container {
+    width: 980px;
+    max-width: 100%;
+    margin: 40px auto;
+    color: #222;
+  }
+  .related-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .related-card {
+    background: #f4f4f4;
+    padding: 16px;
+    border-radius: 8px;
+    width: 220px;
+  }
+  .related-card img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="product-card">
+    
+    <div class="image-area">
+      
+      <img src="nike.jpg" alt="Product image">
+    </div>
+
+    
+    <div class="bid-panel">
+      <div>
+        <div class="title">Nike X Dior Collab Sneakers</div>
+        <div class="meta">Closes: Sun 27th Aug, 12:00pm • 47 watchers</div>
+      </div>
+
+      <div class="current-bid">
+        <div class="label">Current bid</div>
+        <div class="amount">$18,000</div>
+      </div>
+
+
+      <div>
+        <label style="font-size:13px;color:#555;margin-bottom:8px;display:block;">
+          Place your bid
+        </label>
+
+        <div class="bid-actions">
+          <div class="bid-input">
+            <input type="number" min="0" step="1" value="2000" aria-label="Enter your bid">
+          </div>
+
+         
+          <button class="btn btn-primary" title="Place bid">Place bid</button>
+          <button class="btn btn-ghost" title="Add to watchlist">Add to Watchlist</button>
+        </div>
+
+        <div style="font: size 17px;color:#7a8697;margin-top:8px;background-color:#e6ebf0;color: #c31521;">
+          2 bids placed
+        </div>
+      </div>
+
+     
+      <div style="margin-top:8px;font-size:13px;color:#6b7788;">
+        <strong>Time left:</strong> 1 day, 23 hours, 26 minutes
+      </div>
+
+      
+      <div class="seller">
+        <div class="avatar">Nike</div>
+        <div class="info">
+          <div class="name">Nike India</div>
+          <div class="status">Finest Pick of Sneaker Lovers• Seller in Mumbai,India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
